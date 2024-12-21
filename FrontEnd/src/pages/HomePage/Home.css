@@ -1,0 +1,238 @@
+/* Base styles */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
+.home-portfolio {
+    font-weight: 600;
+    color: var(--sparkle-purple);
+}
+
+.home-navigation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-nav-item {
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.home-nav-item:hover {
+    color: #888;
+}
+
+/* Main Content */
+.home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+    min-height: 80vh;
+    position: relative;
+}
+
+/* Left Section */
+.home-left-section {
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    transform: none;
+    left: auto;
+    top: auto;
+    padding: 20px;
+}
+
+.home-title {
+    font-size: clamp(40px, 8vw, 94px);
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.home-title-highlight {
+    font-weight: 600;
+}
+
+.home-subtitle {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Right Section */
+.home-right-section {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    right: auto;
+    bottom: auto;
+}
+
+.home-circle {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Makes circle responsive */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.home-circle-left,
+.home-circle-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+}
+
+.home-circle-left {
+    left: 0;
+    background-color: #7538e0;
+}
+
+.home-circle-right {
+    right: 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Text Content */
+.home-text-content {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.home-kitchen-title {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.home-kitchen-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.home-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.home-arrows span:nth-child(2):hover {
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .home-left-section {
+        text-align: end;
+        position: absolute;
+        top: 50%;
+        left: 31%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .home-right-section {
+        position: absolute;
+        right: 5%;
+        bottom: 15%;
+    }
+
+    .home-text-content {
+        position: absolute;
+        bottom: -40px;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .home-nav-item {
+        margin-left: 15px;
+    }
+
+    .home-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .home-circle {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-header {
+        gap: 15px;
+    }
+
+    .home-navigation {
+        justify-content: center;
+    }
+
+    .home-nav-item {
+        margin: 0 10px;
+    }
+
+    .home-title {
+        font-size: 40px;
+    }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1200px) {
+    .home-circle {
+        width: 600px;
+        height: 600px;
+        padding-bottom: 0;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 320px) {
+    .home-title {
+        font-size: 32px;
+    }
+
+    .home-kitchen-title {
+        font-size: 24px;
+    }
+}
