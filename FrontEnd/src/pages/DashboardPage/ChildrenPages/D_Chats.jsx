@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
-import './D_Chats.css';
+import './D_chats.css';
 import toast from 'react-hot-toast';
 
 const API_URL = import.meta.env.VITE_API_BASE_URL;
