@@ -1,0 +1,24 @@
+/* Sparkling Purple Dark Theme */
+:root {
+    /* Background Colors */
+    --dark-bg-primary: #000000; /* Dark GitHub-like Background */
+    --dark-bg-secondary: #161b22; /* Slightly lighter dark background */
+    --dark-bg-tertiary: #1f2937; /* Deep slate for sections */
+  
+    /* Sparkling Purple Accents */
+    --sparkle-purple: #7538e0; /* Sparkling Purple Accent */
+    --sparkle-purple-hover: #9448f1; /* Hover state (Brighter Purple) */
+    --sparkle-purple-light: #b083f9; /* Softened Purple Accent */
+    --sparkle-purple-border: #7d3ff3; /* Glowing Purple Border */
+  
+    /* Text Colors */
+    --dark-text-primary: #ffffff; /* Light Grayish White */
+    --dark-text-secondary: #c9d1d9; /* Muted Text Color */
+    --dark-text-purple: #dcbcff; /* Light Sparkling Purple for Text */
+  
+    /* Button and Element Backgrounds */
+    --button-bg-purple: #6e40c9; /* Rich Purple for Buttons */
+    --button-hover-purple: #5a34b5; /* Darker Purple Hover State */
+    --input-bg-dark: #21262d; /* Input Field Background */
+  }
+  

@@ -1,0 +1,263 @@
+/* Project Container */
+.project-container {
+    padding: 2rem;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Header */
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .project-header h2 {
+    font-size: 1.5rem;
+    color: var(--sparkle-purple);
+  }
+  
+  .create-btn {
+    background-color: #6e40c9;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-btn:hover {
+    background-color: #5a34b5;
+  }
+  
+  /* No Projects */
+  .no-projects {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 2rem;
+  }
+  
+  /* Project List */
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+  }
+  
+  .project-item {
+    background-color: var(--dark-bg-secondary);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(203, 203, 203, 0.1);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .project-item:hover{
+    border: 1px solid var(--sparkle-purple);
+    cursor: pointer;
+  }
+  
+  .project-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: var(--dark-text-primary);
+  }
+  
+  .project-item p {
+    margin: 0;
+    color: var(--dark-text-secondary);
+  }
+
+  .project-item button{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Popup */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background: var(--dark-bg-secondary);
+    padding: 2rem;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .popup h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-text-primary);
+  }
+  
+  .popup-field {
+    margin-bottom: 1rem;
+  }
+  
+  .popup-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .popup-field input,
+  .popup-field select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var( --dark-bg-secondary);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-text-primary);
+  }
+  
+  .popup-field input::placeholder{
+    color: var(--dark-text-primary);
+  }
+
+  .popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  .popup-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .popup-btn.cancel {
+    background: #ccc;
+    color: #333;
+  }
+  
+  .popup-btn.create {
+    background: #6e40c9;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .popup-btn.create:hover {
+    background: #5a34b5;
+  }
+  
+  /* Responsive Design */
+@media (max-width: 1024px) {
+  .project-container {
+    padding: 1.5rem;
+  }
+
+  .popup {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    margin-top: 30px;
+  }
+
+  .create-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .project-item {
+    padding: 1rem 3rem 1rem 1rem; /* Add right padding for delete button */
+  }
+
+  .project-item button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    right: 10px; /* Adjust position for smaller screens */
+  }
+
+  .popup {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+  }
+
+  .popup-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    padding: 1rem;
+  }
+
+  .project-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-item p {
+    font-size: 0.9rem;
+  }
+
+  .popup {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .popup-field label {
+    font-size: 0.9rem;
+  }
+
+  .popup-field input,
+  .popup-field select {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+  .project-container {
+    padding: 0.8rem;
+  }
+
+  .project-item {
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+  }
+
+  .project-item button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,100 @@
+/* Add to your D_Home.css */
+.search-results-d {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 0;
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--sparkle-purple-border);
+    border-radius: 5px;
+    margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: 30%;
+  }
+  
+  .search-section {
+    padding: 10px;
+  }
+  
+  .search-section h4 {
+    color: var(--sparkle-purple);
+    margin: 0 0 10px 0;
+    padding: 0 10px;
+  }
+  
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-result-item:hover {
+    background-color: var(--dark-bg-tertiary);
+  }
+  
+  .search-result-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .search-result-item i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--sparkle-purple);
+  }
+  
+  .search-result-item span {
+    color: var(--dark-text-primary);
+  }
+  
+  /* D_Home.css */
+.notification-list {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: var(--dark-bg-secondary);
+  border: 1px solid var(--sparkle-purple-border);
+  border-radius: 5px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--sparkle-purple-border);
+  cursor: pointer;
+}
+
+.notification-item.unread {
+  background: var(--dark-bg-tertiary);
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+}
+
+.notification-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
