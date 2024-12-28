@@ -15,11 +15,15 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+@font-face {
+    font-family: 'MyFont';
+    src: url('./assets/sanvafont.ttf') format('truetype');
+}
 /* Dark Mode with Sparkling Purple Accents */
 body {
     background-color: var(--dark-bg-primary);
     color: var(--dark-text-primary);
-    font-family: "Serif", sans-serif;
+    font-family: 'MyFont';
     overflow-x: hidden;
 }
 
