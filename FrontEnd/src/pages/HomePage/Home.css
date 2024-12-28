@@ -26,7 +26,6 @@
 
 .home-navigation {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .home-nav-item {
@@ -199,9 +198,10 @@
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 411px) {
     .home-header {
-        gap: 5px;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 
     .home-navigation {
