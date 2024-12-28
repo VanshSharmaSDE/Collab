@@ -289,8 +289,11 @@
 }
 
 @media (max-width: 481px) {
+    .dashboard-search-notification-profile{
+        margin-bottom: 30px ;
+    }
     .dashboard-search {
-        width: 40%;
+        width: 70%;
         height: 100%;
         margin-left: 30px;
     }
@@ -304,11 +307,7 @@
 
     .dashboard-search input {
         font-size: 0.7rem;
-    }
-
-    .dashboard-notification-profile {
-        width: 25%;
-
+        padding: 10px;
     }
 
     .dashboard-logo {
@@ -427,12 +426,3 @@
     }
 }
 
-@media (max-width: 481px) {
-    .dashboard-search {
-        width: 70%;
-    }
-
-    .dashboard-notification-profile {
-        width: 30%;
-    }
-}
