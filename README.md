@@ -47,7 +47,7 @@
 
 ## 🎥 Demo
 
-> Check out the live demo: [Collab Live Demo](https://your-deployed-link.com)
+> Check out the live demo: [Collab Live Demo](https://collab-frontend-s0ec.onrender.com)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/demo-preview.gif" alt="Collab Preview Demo" width="80%">
