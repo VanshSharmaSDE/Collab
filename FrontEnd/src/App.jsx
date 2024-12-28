@@ -6,7 +6,7 @@ import Contact from '../src/pages/ContactPage/Contact';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Auth from './pages/AuthPage/Auth';
-import Dashboard from './pages/DashboardPage/Dashboard';
+import Dashboard from './pages/DashboardPage/DashBoard';
 import PrivateRoute from './utils/private/PrivateRoute';
 import ProjectDetail from './components/ProjectDetails/ProjectDetail';
 function App() {
