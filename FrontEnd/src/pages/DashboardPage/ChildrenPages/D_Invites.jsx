@@ -87,7 +87,7 @@ function D_Invites() {
                 {project ? (
                   <>
                     <span className='margin-btm-10px'>{project.projectName} ---- [ {ownerData.fullName} ] invited you to this project.</span>
-                    <button onClick={() => handleJoinProject(invite)} className='btn'>Join</button>
+                    <button onClick={() => handleJoinProject(invite)}>Join</button>
                   </>
                 ) : (
                   <p>Loading details...</p>
