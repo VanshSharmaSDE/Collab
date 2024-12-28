@@ -228,16 +228,17 @@
 }
 
 /* For mobile devices */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 411px) {
     .auth-container {
         width: 150px;
         height: 150px;
     }
 
-    .auth-container span {
+    .auth-container>span {
         width: 24px;
         height: 4px;
         transform-origin: 90px;
+        left: -12px;
     }
 
     .auth-login-box {
@@ -280,30 +281,6 @@
     }
 }
 
-/* For very small devices */
-@media screen and (max-width: 320px) {
-    .auth-login-box {
-        width: 240px;
-    }
-
-    .auth-container {
-        width: 120px;
-        height: 120px;
-    }
-
-    .auth-heading {
-        font-size: 1.3em;
-    }
-
-    .auth-input-box input {
-        height: 38px;
-        font-size: 0.8em;
-    }
-
-    .auth-oauth-buttons {
-        gap: 8px;
-    }
-}
 
 /* Add to styles.css */
 .auth-popup {
