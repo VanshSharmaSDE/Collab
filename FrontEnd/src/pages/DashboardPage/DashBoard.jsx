@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Dashboard.css";
+import "./DashBoard.css";
 import D_Home from "./ChildrenPages/D_Home";
 import D_Project from "./ChildrenPages/D_Project";
 import D_Invites from "./ChildrenPages/D_Invites";
