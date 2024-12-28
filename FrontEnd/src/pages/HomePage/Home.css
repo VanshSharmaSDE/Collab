@@ -199,7 +199,7 @@
     }
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 380px) {
     .home-header {
         gap: 15px;
     }
