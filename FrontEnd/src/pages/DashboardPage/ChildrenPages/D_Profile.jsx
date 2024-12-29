@@ -82,7 +82,6 @@ const D_Profile = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-
       const userId = JSON.parse(localStorage.getItem("user")).id;
       // Create FormData to send image and other fields
       const formData = new FormData();
@@ -92,10 +91,13 @@ const D_Profile = () => {
       formData.append("socialLinks.twitter", userData.socialLinks.twitter);
       formData.append("socialLinks.facebook", userData.socialLinks.facebook);
       formData.append("socialLinks.linkedin", userData.socialLinks.linkedin);
+
+      // Only append image if a new one is selected
       if (selectedImage) {
         formData.append("profileImage", selectedImage);
       }
-      // Update user data
+
+      // Update user data with proper headers for multipart/form-data
       const response = await axios.put(
         `${API_URL}/api/auth/update/${userId}`,
         formData,
@@ -105,14 +107,17 @@ const D_Profile = () => {
           },
         }
       );
-      setUserData(response.data.user); // Update state with updated user data
+
+      // Update local state and storage with the response
+      setUserData(response.data.user);
       localStorage.setItem("profileImage", response.data.user.profileImage);
       notifyA("Profile updated successfully!");
     } catch (error) {
-      // console.error("Error updating profile:", error);
+      console.error("Error updating profile:", error);
       notifyB("Failed to update profile. Please try again.");
     }
   };
+
 
   return (
     <div className="profile-container">
