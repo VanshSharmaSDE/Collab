@@ -7,6 +7,14 @@ const transporter = require('../config/email.config');
 const { generateOTP } = require('../utils/otp.utils');
 
 const otpStorage = {};
+const cloudinary = require('cloudinary').v2;
+
+// Configure Cloudinary (add this at the top of your file)
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 // Set up multer for file uploads
 const storage = multer.diskStorage({
@@ -18,7 +26,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({
+const uploadss = multer({
   storage: storage,
   limits: { fileSize: 2 * 1024 * 1024 }, // Limit file size to 2MB
   fileFilter: (req, file, cb) => {
@@ -184,7 +192,7 @@ exports.login = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     // Handle file upload
-    upload.single("profileImage")(req, res, async (err) => {
+    uploadss.single("profileImage")(req, res, async (err) => {
       if (err) {
         return res.status(400).json({ error: err.message });
       }
@@ -192,9 +200,14 @@ exports.updateUser = async (req, res) => {
       const userId = req.params.userId;
       const updates = req.body;
 
-      // If a profile image is uploaded, add its path to the updates object
+      // If a profile image is uploaded, upload to Cloudinary
       if (req.file) {
-        updates.profileImage = `${process.env.SERVER_URL}/uploads/${req.file.filename}`
+        try {
+          const result = await cloudinary.uploader.upload(req.file.path);
+          updates.profileImage = result.secure_url;
+        } catch (cloudinaryError) {
+          return res.status(400).json({ error: "Error uploading image to Cloudinary" });
+        }
       }
 
       const user = await User.findByIdAndUpdate(userId, updates, { new: true });
@@ -211,6 +224,8 @@ exports.updateUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+
 
 exports.forgotPassword = async (req, res) => {
   try {
