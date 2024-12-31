@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
@@ -118,6 +118,15 @@ const D_Profile = () => {
     }
   };
 
+  const userIdRef = useRef(null);
+
+  // Function to copy user ID
+  const copyUserId = () => {
+    const userId = JSON.parse(localStorage.getItem("user")).id;
+    navigator.clipboard.writeText(userId);
+    notifyA("User ID copied to clipboard!");
+  };
+
 
   return (
     <div className="profile-container">
@@ -141,6 +150,9 @@ const D_Profile = () => {
         <div className="profile-info">
           <h2>Profile Info</h2>
           <form onSubmit={handleFormSubmit}>
+            <button type="button" onClick={copyUserId} className="copy-id-button save-button margin-btm-10px">
+              Copy User ID
+            </button>
             <div className="form-group">
               <label>Full Name</label>
               <input
