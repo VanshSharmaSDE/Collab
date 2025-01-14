@@ -9,6 +9,7 @@ import "./ProjectDetail.css";
 import axios from "axios";
 import io from 'socket.io-client';
 import toast from "react-hot-toast";
+import Loader from "../Loader/Loader";
 
 const NewFileModal = ({ isOpen, onClose, onSubmit, fileType }) => {
   const [fileName, setFileName] = useState("");
@@ -23,6 +24,8 @@ const NewFileModal = ({ isOpen, onClose, onSubmit, fileType }) => {
   };
 
   if (!isOpen) return null;
+
+  
 
   return (
     <div className="modal-overlay">
@@ -566,7 +569,7 @@ const ProjectDetail = () => {
             />
           )}
         </div>
-      </div>) : (<>Loading</>)}
+      </div>) : <Loader></Loader>}
     </>
   );
 };
