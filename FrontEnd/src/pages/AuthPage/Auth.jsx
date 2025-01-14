@@ -47,18 +47,21 @@ const Auth = () => {
     const { email, password, fullName } = formData;
 
     if (!patterns.email.test(email)) {
+      setLoader(false);
       notifyB('Invalid email format');
       return false;
     }
 
     if (formType === 'signup') {
       if (!patterns.fullName.test(fullName)) {
+        setLoader(false);
         notifyB('Name should be 3-30 characters long, letters only');
         return false;
       }
     }
 
     if (formType !== 'forgot' && !patterns.password.test(password)) {
+      setLoader(false);
       notifyB('Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special character');
       return false;
     }
