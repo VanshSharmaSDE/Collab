@@ -23,9 +23,9 @@ const userSchema = new mongoose.Schema({
     profileImage: { type: String, default: "" },
     biography: { type: String, default: "" },
     socialLinks: {
-        twitter: { type: String, default: "Link your Twitter account" },
-        facebook: { type: String, default: "Link your Facebook account" },
-        linkedin: { type: String, default: "Link your Linkedin account" },
+        twitter: { type: String, default: "" },
+        facebook: { type: String, default: "" },
+        linkedin: { type: String, default: "" },
     },
     createdAt: {
         type: Date,
